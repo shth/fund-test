@@ -4,34 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.muicss.com/mui-0.9.41/css/mui.min.css" rel="stylesheet" type="text/css" />
-    <style>
-        .board {
-            min-height: 300px;
-            display: block;
-        }
-
-        .board-header {
-            width: 100%;
-            height: 30px;
-        }
-
-        .board-body {
-            padding-top: 10px;
-            padding-bottom: 10px;
-            min-height: 200px
-        }
-
-        .issue {
-            background-color: rgb(201, 201, 201);
-            width: 150px;
-            min-height: 60px;
-            padding: 5px;
-            display: inline-block;
-            cursor: pointer;
-            vertical-align: top;
-            margin-right: 10px;
-        }
-    </style>
+    <link href="./index.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -110,29 +83,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script src="https://cdn.muicss.com/mui-0.9.41/js/mui.min.js"></script>
-    <script>
-        const boardNodeList = document.querySelectorAll('.board-body')
-
-        for (boardElement of boardNodeList) {
-            Sortable.create(boardElement, {group: 'board', animation: 150})
-        }
-
-        function createIssue(text) {
-            const issue = document.createElement('div')
-            issue.setAttribute('class', 'mui-panel issue')
-            issue.innerHTML = text
-
-            return issue
-        }
-
-        function addIssue(text) {
-            const backlogBoardBody = document.querySelector('#backlog .board-body')
-            const input = document.getElementById('newIssue')
-            const issue = createIssue(input.value)
-            input.value = ''
-            backlogBoardBody.appendChild(issue)
-        }
-    </script>
+    <script src="index.js"></script>
 </body>
 
 </html>
