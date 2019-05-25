@@ -29,15 +29,20 @@
             display: inline-block;
             cursor: pointer;
             vertical-align: top;
+            margin-right: 10px;
         }
     </style>
 </head>
 
 <body>
     <div class="mui-container-fluid">
+        <div class="mui-textfield">
+            <input id="newIssue" type="text" placeholder="New Issue">
+        </div>
+        <button type="button" class="mui-btn mui-btn--raised" onclick="addIssue()">Create</button>
         <div class="mui-row">
             <div class="mui-col-xs-12">
-                <div class="board mui-panel">
+                <div id="backlog" class="board mui-panel">
                     <div class="board-header">
                         Backlog
                     </div>
@@ -106,11 +111,26 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>
     <script src="https://cdn.muicss.com/mui-0.9.41/js/mui.min.js"></script>
     <script>
-        debugger
         const boards = document.querySelectorAll('.board-body')
         const drake = dragula()
         for (board of boards) {
             drake.containers.push(board)
+        }
+
+        function createIssue(text) {
+            const issue = document.createElement('div')
+            issue.setAttribute('class', 'mui-panel issue')
+            issue.innerHTML = text
+
+            return issue
+        }
+
+        function addIssue(text) {
+            const backlogBoardBody = document.querySelector('#backlog .board-body')
+            const input = document.getElementById('newIssue')
+            const issue = createIssue(input.value)
+            input.value = ''
+            backlogBoardBody.appendChild(issue)
         }
     </script>
 </body>
