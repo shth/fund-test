@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.muicss.com/mui-0.9.41/css/mui.min.css" rel="stylesheet" type="text/css" />
     <style>
         .board {
@@ -17,11 +18,7 @@
         .board-body {
             padding-top: 10px;
             padding-bottom: 10px;
-        }
-
-        .issue-board {
-            /* width: 100%; */
-            min-height: 200px;
+            min-height: 200px
         }
 
         .issue {
@@ -34,23 +31,22 @@
             vertical-align: top;
         }
     </style>
-    <script src="https://cdn.muicss.com/mui-0.9.41/js/mui.min.js"></script>
 </head>
 
 <body>
     <div class="mui-container-fluid">
         <div class="mui-row">
             <div class="mui-col-xs-12">
-                <div class="issue-board mui-panel">
+                <div class="board mui-panel">
                     <div class="board-header">
                         Backlog
                     </div>
                     <div class="mui-divider"></div>
                     <div class="board-body">
-                        <div class="mui-panel issue " draggable="true">
+                        <div class="mui-panel issue">
                             A feature requested from user to improve overall efficiency.
                         </div>
-                        <div class="mui-panel issue" draggable="true">
+                        <div class="mui-panel issue">
                             Enhancement requested from product owner to improve overall design.
                         </div>
                     </div>
@@ -64,6 +60,7 @@
                         To-do
                     </div>
                     <div class="mui-divider"></div>
+                    <div class="board-body"></div>
                 </div>
             </div>
             <div class="mui-col-xs-12 mui-col-md-4">
@@ -72,6 +69,7 @@
                         Doing
                     </div>
                     <div class="mui-divider"></div>
+                    <div class="board-body"></div>
                 </div>
             </div>
             <div class="mui-col-xs-12 mui-col-md-4">
@@ -80,6 +78,7 @@
                         Completed
                     </div>
                     <div class="mui-divider"></div>
+                    <div class="board-body"></div>
                 </div>
             </div>
         </div>
@@ -90,6 +89,7 @@
                         QA
                     </div>
                     <div class="mui-divider"></div>
+                    <div class="board-body"></div>
                 </div>
             </div>
             <div class="mui-col-xs-12 mui-col-md-4">
@@ -98,10 +98,21 @@
                         Closed
                     </div>
                     <div class="mui-divider"></div>
+                    <div class="board-body"></div>
                 </div>
             </div>
         </div>
     </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>
+    <script src="https://cdn.muicss.com/mui-0.9.41/js/mui.min.js"></script>
+    <script>
+        debugger
+        const boards = document.querySelectorAll('.board-body')
+        const drake = dragula()
+        for (board of boards) {
+            drake.containers.push(board)
+        }
+    </script>
 </body>
 
 </html>
