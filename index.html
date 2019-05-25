@@ -1,64 +1,107 @@
-<style>
-    .board {
-        width: 300px;
-        height: 800px;
-        border: solid 1px #000;
-        display: inline-block;
-    }
+<!doctype html>
+<html>
 
-    .board-header {
-        width: 100%;
-        height: 30px;
-        border-bottom: solid 1px;
-    }
+<head>
+    <link href="https://cdn.muicss.com/mui-0.9.41/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <style>
+        .board {
+            min-height: 300px;
+            display: block;
+        }
 
-    .issue-board {
-        width: 100%;
-        height: 200px;
-        border: solid 1px #000;
-    }
+        .board-header {
+            width: 100%;
+            height: 30px;
+        }
 
-    .issue {
-        background-color: rgb(240, 173, 78);
-        width: 150px;
-        min-height: 60px;
-        padding: 5px;
-        display: inline-block;
-    }
-</style>
-<div class="board">
-    <div class="board-header">
-        To-do
+        .board-body {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .issue-board {
+            /* width: 100%; */
+            min-height: 200px;
+        }
+
+        .issue {
+            background-color: rgb(201, 201, 201);
+            width: 150px;
+            min-height: 60px;
+            padding: 5px;
+            display: inline-block;
+            cursor: pointer;
+            vertical-align: top;
+        }
+    </style>
+    <script src="https://cdn.muicss.com/mui-0.9.41/js/mui.min.js"></script>
+</head>
+
+<body>
+    <div class="mui-container-fluid">
+        <div class="mui-row">
+            <div class="mui-col-xs-12">
+                <div class="issue-board mui-panel">
+                    <div class="board-header">
+                        Backlog
+                    </div>
+                    <div class="mui-divider"></div>
+                    <div class="board-body">
+                        <div class="mui-panel issue " draggable="true">
+                            A feature requested from user to improve overall efficiency.
+                        </div>
+                        <div class="mui-panel issue" draggable="true">
+                            Enhancement requested from product owner to improve overall design.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mui-row">
+            <div class="mui-col-xs-12 mui-col-md-4">
+                <div class="board mui-panel">
+                    <div class="board-header">
+                        To-do
+                    </div>
+                    <div class="mui-divider"></div>
+                </div>
+            </div>
+            <div class="mui-col-xs-12 mui-col-md-4">
+                <div class="board mui-panel">
+                    <div class="board-header">
+                        Doing
+                    </div>
+                    <div class="mui-divider"></div>
+                </div>
+            </div>
+            <div class="mui-col-xs-12 mui-col-md-4">
+                <div class="board mui-panel">
+                    <div class="board-header">
+                        Completed
+                    </div>
+                    <div class="mui-divider"></div>
+                </div>
+            </div>
+        </div>
+        <div class="mui-row">
+            <div class="mui-col-xs-12 mui-col-md-4">
+                <div class="board mui-panel">
+                    <div class="board-header">
+                        QA
+                    </div>
+                    <div class="mui-divider"></div>
+                </div>
+            </div>
+            <div class="mui-col-xs-12 mui-col-md-4">
+                <div class="board mui-panel">
+                    <div class="board-header">
+                        Closed
+                    </div>
+                    <div class="mui-divider"></div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<div class="board">
-    <div class="board-header">
-        Doing
-    </div>
-</div>
-<div class="board">
-    <div class="board-header">
-        Completed
-    </div>
-</div>
-<div class="board">
-    <div class="board-header">
-        QA
-    </div>
-</div>
-<div class="board">
-    <div class="board-header">
-        Closed
-    </div>
-</div>
-<div class="issue-board">
-    <div class="board-header">
-        Backlog
-    </div>
-    <div class="issue" draggable="true">
-        A feature requested from user to improve overall efficiency.
-    </div>
-    <div class="issue" draggable="true">
-        Enhancement requested from product owner to improve overall design.
-    </div>
-</div>
+</body>
+
+</html>
