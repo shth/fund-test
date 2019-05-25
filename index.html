@@ -108,13 +108,13 @@
             </div>
         </div>
     </div>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script src="https://cdn.muicss.com/mui-0.9.41/js/mui.min.js"></script>
     <script>
-        const boards = document.querySelectorAll('.board-body')
-        const drake = dragula()
-        for (board of boards) {
-            drake.containers.push(board)
+        const boardNodeList = document.querySelectorAll('.board-body')
+
+        for (boardElement of boardNodeList) {
+            Sortable.create(boardElement, {group: 'board', animation: 150})
         }
 
         function createIssue(text) {
